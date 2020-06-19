@@ -1,0 +1,629 @@
+fileFormatVersion: 2
+guid: 6353680b844ec1f46b23d6476c83f7ec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2283119084929048198
+    second: blue_panel_0
+  - first:
+      213: -885335687309294019
+    second: blue_panel_1
+  - first:
+      213: 8120731808995396249
+    second: blue_panel_2
+  - first:
+      213: -5655973206314156787
+    second: blue_panel_3
+  - first:
+      213: -871046673083387327
+    second: blue_panel_4
+  - first:
+      213: -2845346970702765063
+    second: blue_panel_5
+  - first:
+      213: 3243756876787956122
+    second: blue_panel_6
+  - first:
+      213: 214451858743217660
+    second: blue_panel_7
+  - first:
+      213: 6731374385190496583
+    second: blue_panel_8
+  - first:
+      213: 4387906036454041109
+    second: blue_panel_9
+  - first:
+      213: 7023673352762446369
+    second: blue_panel_10
+  - first:
+      213: -7358467028835373947
+    second: blue_panel_11
+  - first:
+      213: -6723145940506373323
+    second: blue_panel_12
+  - first:
+      213: 5337544334970573110
+    second: blue_panel_13
+  - first:
+      213: -1763621257564481276
+    second: blue_panel_14
+  - first:
+      213: -8758147576952664955
+    second: blue_panel_15
+  - first:
+      213: 242146267227655413
+    second: blue_panel_16
+  - first:
+      213: 3307898377890003075
+    second: blue_panel_17
+  - first:
+      213: -3394359588162261486
+    second: blue_panel_18
+  - first:
+      213: 7324805947285551181
+    second: blue_panel_19
+  - first:
+      213: -4938399148959837123
+    second: blue_panel_20
+  - first:
+      213: -6711341803611780244
+    second: blue_panel_21
+  - first:
+      213: -3528161698360783785
+    second: blue_panel_22
+  - first:
+      213: 3131254502699733072
+    second: blue_panel_23
+  - first:
+      213: 4260157232525091879
+    second: blue_panel_24
+  - first:
+      213: 194713566029401117
+    second: blue_panel_25
+  - first:
+      213: -4228760521016722442
+    second: blue_panel_26
+  - first:
+      213: -1798868998943293628
+    second: blue_panel_27
+  - first:
+      213: 2690623134052405195
+    second: blue_panel_28
+  - first:
+      213: -964037824913513692
+    second: blue_panel_29
+  - first:
+      213: -7447007005048362896
+    second: blue_panel_30
+  - first:
+      213: 2417323096446274872
+    second: blue_panel_31
+  - first:
+      213: -7074810380187530195
+    second: blue_panel_32
+  - first:
+      213: 4427374755714153720
+    second: blue_panel_33
+  - first:
+      213: 2225972995359375920
+    second: blue_panel_34
+  - first:
+      213: -7632237681129001579
+    second: blue_panel_35
+  - first:
+      213: -6306296873645773693
+    second: blue_panel_36
+  - first:
+      213: 2579158674580609606
+    second: blue_panel_37
+  - first:
+      213: -7160338979300639490
+    second: blue_panel_38
+  - first:
+      213: -889870085530618288
+    second: blue_panel_39
+  - first:
+      213: -2214721376295377427
+    second: blue_panel_40
+  - first:
+      213: -7414373222272533389
+    second: blue_panel_41
+  - first:
+      213: 3716878284966283679
+    second: blue_panel_42
+  - first:
+      213: -5773269120432269236
+    second: blue_panel_43
+  - first:
+      213: -3880526782602408331
+    second: blue_panel_44
+  - first:
+      213: -4577287239013275325
+    second: blue_panel_45
+  - first:
+      213: 4882611623825252884
+    second: blue_panel_46
+  - first:
+      213: 7834574157495892955
+    second: blue_panel_47
+  - first:
+      213: -2900447445417259969
+    second: blue_panel_48
+  - first:
+      213: 1947182347158257694
+    second: blue_panel_49
+  - first:
+      213: 5213230465918364380
+    second: blue_panel_50
+  - first:
+      213: -811387356575581985
+    second: blue_panel_51
+  - first:
+      213: -7316946212589512346
+    second: blue_panel_52
+  - first:
+      213: -319334445808177045
+    second: blue_panel_53
+  - first:
+      213: 6517405093023229497
+    second: blue_panel_54
+  - first:
+      213: 4915126978734052396
+    second: blue_panel_55
+  - first:
+      213: 7740207792703422263
+    second: blue_panel_56
+  - first:
+      213: 4258800265571238642
+    second: blue_panel_57
+  - first:
+      213: 8189711738880013052
+    second: blue_panel_58
+  - first:
+      213: -950756413324919939
+    second: blue_panel_59
+  - first:
+      213: 3463673846467017778
+    second: blue_panel_60
+  - first:
+      213: -4293993962294199848
+    second: blue_panel_61
+  - first:
+      213: -1351791636331440828
+    second: blue_panel_62
+  - first:
+      213: 2071245902318352630
+    second: blue_panel_63
+  - first:
+      213: 1107984982491501568
+    second: blue_panel_64
+  - first:
+      213: 8348367258878774253
+    second: blue_panel_65
+  - first:
+      213: -4342095811902564166
+    second: blue_panel_66
+  - first:
+      213: -6725570083727120610
+    second: blue_panel_67
+  - first:
+      213: 235769002758457448
+    second: blue_panel_68
+  - first:
+      213: -2229295063954942990
+    second: blue_panel_69
+  - first:
+      213: 4634121328307287514
+    second: blue_panel_70
+  - first:
+      213: 4929667173459398270
+    second: blue_panel_71
+  - first:
+      213: 6987716643242854819
+    second: blue_panel_72
+  - first:
+      213: 4579176212995830917
+    second: blue_panel_73
+  - first:
+      213: -5085903667410925747
+    second: blue_panel_74
+  - first:
+      213: 7857262497427604258
+    second: blue_panel_75
+  - first:
+      213: -338516505608690144
+    second: blue_panel_76
+  - first:
+      213: -838756964394801104
+    second: blue_panel_77
+  - first:
+      213: 1918025974008068388
+    second: blue_panel_78
+  - first:
+      213: 7130880753483644320
+    second: blue_panel_79
+  - first:
+      213: -2009895688396783824
+    second: blue_panel_80
+  - first:
+      213: -3897371119532200409
+    second: blue_panel_81
+  - first:
+      213: -3345556552583469809
+    second: blue_panel_82
+  - first:
+      213: -7078802449595978202
+    second: blue_panel_83
+  - first:
+      213: -5466886555036045631
+    second: blue_panel_84
+  - first:
+      213: -4367048727599626408
+    second: blue_panel_85
+  - first:
+      213: 4502843698629543776
+    second: blue_panel_86
+  - first:
+      213: -5660517380120711682
+    second: blue_panel_87
+  - first:
+      213: 2816643711286231021
+    second: blue_panel_88
+  - first:
+      213: -2749857475913659645
+    second: blue_panel_89
+  - first:
+      213: -4945735680627502440
+    second: blue_panel_90
+  - first:
+      213: -2278321336635075741
+    second: blue_panel_91
+  - first:
+      213: -3707228779263520168
+    second: blue_panel_92
+  - first:
+      213: -6768789643914513079
+    second: blue_panel_93
+  - first:
+      213: -6372111582271426328
+    second: blue_panel_94
+  - first:
+      213: 6611383770619619864
+    second: blue_panel_95
+  - first:
+      213: -1314188875106261887
+    second: blue_panel_96
+  - first:
+      213: 1921833355048459505
+    second: blue_panel_97
+  - first:
+      213: -413584923259839400
+    second: blue_panel_98
+  - first:
+      213: 1064258576697677638
+    second: blue_panel_0
+  - first:
+      213: -4673815728302575614
+    second: blue_panel_1
+  - first:
+      213: -5985007166318765157
+    second: blue_panel_2
+  - first:
+      213: -3196807644514951743
+    second: blue_panel_3
+  - first:
+      213: -2336339965536234172
+    second: blue_panel_4
+  - first:
+      213: 270926225937448797
+    second: blue_panel_5
+  - first:
+      213: 8923516733100835541
+    second: blue_panel_6
+  - first:
+      213: 4882754165677170489
+    second: blue_panel_7
+  - first:
+      213: -605269279562503010
+    second: blue_panel_8
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 12, y: 11, z: 10, w: 11}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blue_panel_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66.66667
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6475a3d698105ce00800000000000000
+      internalID: 1064258576697677638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_panel_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 66.66667
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20034e8ab55432fb0800000000000000
+      internalID: -4673815728302575614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_panel_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 66.66667
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b176131bbf0fca0800000000000000
+      internalID: -5985007166318765157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_panel_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33.666668
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cdde6d7268a2a3d0800000000000000
+      internalID: -3196807644514951743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_panel_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33.666668
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4451aa70e27a39fd0800000000000000
+      internalID: -2336339965536234172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_panel_5
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 33.666668
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fb65197f582c300800000000000000
+      internalID: 270926225937448797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_panel_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66666794
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2cabf9033b6db70800000000000000
+      internalID: 8923516733100835541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_panel_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0.66666794
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f1fb23b0703c340800000000000000
+      internalID: 4882754165677170489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_panel_8
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0.66666794
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c683e0cc6a997f0800000000000000
+      internalID: -605269279562503010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
