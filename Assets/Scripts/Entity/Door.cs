@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour, IInteractable
 {
+    const string OPEN_SOUND = "DOOR_OPEN";
+
     public static event Action<Door> Opened;
 
     bool _wasOpened;        //Prevents spamming open button

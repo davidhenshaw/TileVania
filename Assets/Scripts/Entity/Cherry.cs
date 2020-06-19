@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Hellmade.Sound;
+
 
 public class Cherry : Collectable
 {
@@ -10,6 +12,8 @@ public class Cherry : Collectable
     {
         //Play Sound
         SFX.instance.Play(_pickUpSound, 0.8f);
+        //EazySoundManager.PlaySound(_pickUpSound);
+
         //Delete self
         Destroy(gameObject);
     }

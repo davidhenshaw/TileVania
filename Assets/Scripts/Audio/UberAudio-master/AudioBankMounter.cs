@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace UberAudio
 {
-    [AddComponentMenu("Assets/Uber Audio/Bank Mounter")]
+    [AddComponentMenu("Uber Audio/Bank Mounter")]
     public class AudioBankMounter : MonoBehaviour
     {
         public List<string> BanksToMount = new List<string>();

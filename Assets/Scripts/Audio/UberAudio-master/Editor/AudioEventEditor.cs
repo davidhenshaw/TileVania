@@ -302,13 +302,13 @@ namespace UberAudio
             DrawAudioEventOptionsMask(audioEvent);
 
             //Delete an item?
-            if (GUILayout.Button("Dl", GUILayout.MaxWidth(25)))
+            if (GUILayout.Button(new GUIContent("Dl", "Delete") , GUILayout.MaxWidth(25)))
             {
                 IndexToDelete = audioEventIndex;
             }
 
             //Clone an item?
-            if (GUILayout.Button("Cl", GUILayout.MaxWidth(FieldButtonWidth)))
+            if (GUILayout.Button(new GUIContent("Cl", "Clone") , GUILayout.MaxWidth(FieldButtonWidth)))
             {
                 IndexToClone = audioEventIndex;
             }
