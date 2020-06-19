@@ -31,6 +31,8 @@ public abstract class PlayerMovementState : PlayerState
 
         if (jumpRequested && canJump || jumpWasBuffered && canJump)
         {
+            //Play Sound
+
             //Kill vertical velocity
             _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, 0);
             // Do Jump

@@ -9,7 +9,7 @@ namespace UberAudio
     //Menu option for creating a new audio manager
     public class AudioManagerCreator
     {
-        [MenuItem("Assets/Uber Audio/Create Audio Manager")]
+        [MenuItem("Uber Audio/Create Audio Manager")]
         public static void CreateAudioManager()
         {
             var audioGO = new GameObject();
@@ -17,7 +17,7 @@ namespace UberAudio
             audioGO.name = "UberAudioManager";
         }
 
-        [MenuItem("Assets/Uber Audio/Create Audio Bank Mounter")]
+        [MenuItem("Uber Audio/Create Audio Bank Mounter")]
         public static void CreateAudioBankMounter()
         {
             var audioGO = new GameObject();

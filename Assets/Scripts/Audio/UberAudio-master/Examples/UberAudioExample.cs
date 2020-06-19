@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UberAudio;
+using TMPro;
 
 public class UberAudioExample : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class UberAudioExample : MonoBehaviour
 	}
 
 	List<SoundGO> ActiveObjects = new List<SoundGO>();
-	public GUIText InstructionText;
+	public TMP_Text InstructionText;
 	public Transform StartPos;
 	public Transform EndPos;
 	public GameObject SoundObjectPrefab;
@@ -35,6 +36,7 @@ public class UberAudioExample : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+
 		if(Input.GetKeyDown("1"))
 		{
 			var soundGO = CreateSoundGO();
