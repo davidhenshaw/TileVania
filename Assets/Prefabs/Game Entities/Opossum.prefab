@@ -205,7 +205,7 @@ MonoBehaviour:
   _moveSpeed: 1.5
   _direction: {x: -1, y: 0}
   _bodyCollider: {fileID: 0}
-  layerMask:
+  _walkableSurfaceMask:
     serializedVersion: 2
     m_Bits: 8448
 --- !u!95 &4333473159180428410

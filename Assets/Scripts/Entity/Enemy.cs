@@ -7,16 +7,16 @@ public class Enemy : MonoBehaviour
     const string ANIM_TRIGGER_DIE = "died";
 
     Rigidbody2D _rigidbody;
-    EdgeDetector _wallEdgeDetector;
+    EdgeDetector2D _wallEdgeDetector;
     [SerializeField] float _moveSpeed = 3f;
     [SerializeField] Vector2 _direction;
     [SerializeField] Collider2D _bodyCollider;
-    [SerializeField] LayerMask layerMask;
+    [SerializeField] LayerMask _walkableSurfaceMask;
 
     private void Awake()
     {
         _direction.Normalize();
-        _wallEdgeDetector = GetComponentInChildren<EdgeDetector>();
+        _wallEdgeDetector = GetComponentInChildren<EdgeDetector2D>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _bodyCollider = GetComponent<Collider2D>();
     }

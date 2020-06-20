@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
     [SerializeField] Collider2D _groundCollider;
     [SerializeField] Collider2D _headCollider;
     [SerializeField] Collider2D _bodyCollider;
+    [SerializeField] Collider2D _feetHitbox;
 
     public Animator Animator { get => _animator; }
     public Rigidbody2D RigidBody { get => _rigidBody; }
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
     public Collider2D HeadCollider { get => _headCollider;  }
     public Collider2D BodyCollider { get => _bodyCollider;  }
     public Collider2D GroundCollider { get => _groundCollider; }
+    public Collider2D FeetHitbox { get => _feetHitbox; }
     public CommandBuffer UngroundedJumpBuffer { get => _ungroundedJumpBuffer; }
     public CommandBuffer CoyoteTimeBuffer { get => _coyoteTimeBuffer; }
     public IPlayerInput Input { get => _input; }
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
 
     private void FixedUpdate()
     {
-        CheckOneWayStates();
+        CalculateNextState();
 
         _ungroundedJumpBuffer.Tick(Time.fixedDeltaTime);
         _coyoteTimeBuffer.Tick(Time.fixedDeltaTime);
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
         }
     }
 
-    private void CheckOneWayStates()
+    private void CalculateNextState()
     {
         // Player Death
         if (IsTouchingHazard())

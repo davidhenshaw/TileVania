@@ -18,14 +18,19 @@ public class GroundedState : PlayerMovementState
 
     public override IState CalculateNextState()
     {
-        if(RequestedClimb())
-            return new ClimbState(_playerController, _stateMachine);
+        if (RequestedPounce())
+            return new GroundedPounceState(_playerController, _stateMachine);
 
         if (!IsGrounded())
             return new UngroundedState(_playerController, _stateMachine);
 
+        if (RequestedClimb())
+            return new ClimbState(_playerController, _stateMachine);
+
         if (IsHoldingCrouch())
             return new CrouchState(_playerController, _stateMachine);
+
+
 
         return null;
     }

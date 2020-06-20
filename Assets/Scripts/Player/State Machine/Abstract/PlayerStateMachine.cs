@@ -3,7 +3,6 @@
 public class PlayerStateMachine : MonoBehaviour, IStateMachine
 {
     protected IState _currState;
-    protected IState _defaultState;
     private IState _nextState;
 
     public IState CurrentState { get => _currState; }

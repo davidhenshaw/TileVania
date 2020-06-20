@@ -44,8 +44,4 @@ public class DeadState : PlayerMovementState
         return base.Enter();
     }
 
-    public override void Tick()
-    {
-        base.Tick();
-    }
 }

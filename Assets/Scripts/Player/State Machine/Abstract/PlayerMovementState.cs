@@ -75,7 +75,9 @@ public abstract class PlayerMovementState : PlayerState
             return;
 
         // Flip sprite on the X axis if horizontal input is to the left (negative)
-        renderer.flipX = horizontalAxis < 0;
+        //renderer.flipX = horizontalAxis < 0;
+        float xScale = horizontalAxis > 0 ? 1 : -1;
+        _playerController.RigidBody.transform.localScale = new Vector3(xScale, 1, 1);
     }
 
     protected bool CanClimb()
@@ -107,5 +109,14 @@ public abstract class PlayerMovementState : PlayerState
     {
         return _input.ClimbPressed && _groundCollider.IsTouchingLayers(LayerMask.GetMask("Climbable"));
     }
+    
+    protected bool RequestedPounce()
+    {
+        return _input.PouncePressed && IsGrounded();
+    }
 
+    protected bool StompingEnemy()
+    {
+        return _playerController.FeetHitbox.IsTouchingLayers(LayerMask.GetMask("Enemy"));
+    }
 }
