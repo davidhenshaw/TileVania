@@ -15,6 +15,21 @@ public class GroundedState : PlayerMovementState
         _headCollider = _playerController.HeadCollider;
     }
 
+
+    public override IState CalculateNextState()
+    {
+        if(RequestedClimb())
+            return new ClimbState(_playerController, _stateMachine);
+
+        if (!IsGrounded())
+            return new UngroundedState(_playerController, _stateMachine);
+
+        if (IsHoldingCrouch())
+            return new CrouchState(_playerController, _stateMachine);
+
+        return null;
+    }
+
     public override IEnumerator Enter()
     {
         _nextStates.Add(

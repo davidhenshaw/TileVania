@@ -4,6 +4,7 @@ public class PlayerStateMachine : MonoBehaviour, IStateMachine
 {
     protected IState _currState;
     protected IState _defaultState;
+    private IState _nextState;
 
     public IState CurrentState { get => _currState; }
 
@@ -15,13 +16,13 @@ public class PlayerStateMachine : MonoBehaviour, IStateMachine
     protected void Update()
     {
         _currState?.Tick();
-        _currState?.CheckNextStates();
+        //_currState?.CheckNextStates();
+        _nextState = _currState?.CalculateNextState();
 
-        //IState nextState = _currState?.GetNextState();
-        //if(nextState != null)
-        //{
-        //    SetState(nextState);
-        //}
+        if (_nextState != null)
+        {
+            SetState(_nextState);
+        }
 
     }
 

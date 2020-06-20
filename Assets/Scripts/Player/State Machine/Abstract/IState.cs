@@ -6,4 +6,5 @@ public interface IState
     IEnumerator Exit();
     void Tick();
     void CheckNextStates();
+    IState CalculateNextState();
 }

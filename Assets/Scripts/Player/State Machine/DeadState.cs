@@ -10,6 +10,11 @@ public class DeadState : PlayerMovementState
 
     }
 
+    public override IState CalculateNextState()
+    {
+        return null;
+    }
+
     public override IEnumerator Exit()
     {
         _playerController.Animator.SetBool(ANIM_BOOL_HURTING, false);

@@ -8,6 +8,14 @@ public class CrouchState : PlayerMovementState
     {
     }
 
+    public override IState CalculateNextState()
+    {
+        if (!IsHoldingCrouch())
+            return new GroundedState(_playerController, _stateMachine);
+
+        return null;
+    }
+
     public override IEnumerator Enter()
     {
         _nextStates.Add(

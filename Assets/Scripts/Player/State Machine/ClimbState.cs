@@ -6,13 +6,23 @@ using UnityEngine;
 public class ClimbState : PlayerMovementState
 {
     [SerializeField] float _climbSpeed = 4f;
-    bool _jumpCancel = false;
+    bool _jumpBeforeExiting = false;
 
     public ClimbState(IPlayerEntity playerEntity, IStateMachine stateMachine) : base(playerEntity, stateMachine)
     {
         _rigidBody = playerEntity.RigidBody;
         _animator = playerEntity.Animator;
         _groundCollider = playerEntity.GroundCollider;
+    }
+
+    public override IState CalculateNextState()
+    {
+        if (!CanClimb())
+            return new GroundedState(_playerController, _stateMachine);
+        if (JumpRequested())
+            return new UngroundedState(_playerController, _stateMachine);
+
+        return null;
     }
 
     public override IEnumerator Enter()
@@ -39,8 +49,8 @@ public class ClimbState : PlayerMovementState
         _animator.SetBool(ANIM_BOOL_CLIMBING, false);
         _rigidBody.gravityScale = 1;
 
-        if (_jumpCancel)
-            JumpOff();
+        if (_jumpBeforeExiting)
+            Jump();
 
         yield break;
     }
@@ -52,17 +62,17 @@ public class ClimbState : PlayerMovementState
         UpdateAnimator();
     }
 
-    void JumpOff()
-    {
-        _rigidBody.velocity += Vector2.up * _playerSettings.JumpVelocity;
-    }
+    //void Jump()
+    //{
+    //    _rigidBody.velocity += Vector2.up * _playerSettings.JumpVelocity;
+    //}
 
     bool JumpRequested()
     {
         if (_input.JumpPressed)
-            _jumpCancel = true;
+            _jumpBeforeExiting = true;
 
-        return _jumpCancel;
+        return _jumpBeforeExiting;
     }
 
     void MoveVertical()

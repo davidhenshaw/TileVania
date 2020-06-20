@@ -8,6 +8,17 @@ public class UngroundedState : PlayerMovementState
     {
     }
 
+    public override IState CalculateNextState()
+    {
+        if (IsGrounded())
+            return new GroundedState(_playerController, _stateMachine);
+
+        if (RequestedClimb())
+            return new ClimbState(_playerController, _stateMachine);
+
+        return null;
+    }
+
     public override IEnumerator Exit()
     {
         _animator.SetBool(ANIM_BOOL_JUMPING, false);
@@ -28,6 +39,7 @@ public class UngroundedState : PlayerMovementState
         UpdateAnimator();
         return base.Enter();
     }
+
 
     public override void Tick()
     {

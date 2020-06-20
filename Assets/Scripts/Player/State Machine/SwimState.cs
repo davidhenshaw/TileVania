@@ -9,6 +9,14 @@ public class SwimState : PlayerMovementState
     {
     }
 
+    public override IState CalculateNextState()
+    {
+        if (!IsSwimming())
+            return new UngroundedState(_playerController, _stateMachine);
+
+        return null;
+    }
+
     // Start is called before the first frame update
     public override IEnumerator Enter()
     {

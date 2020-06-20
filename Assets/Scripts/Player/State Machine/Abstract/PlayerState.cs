@@ -19,6 +19,8 @@ public abstract class PlayerState : IState
     protected Dictionary<Func<bool>, IState> _nextStates;
     protected IStateMachine _stateMachine;
 
+    public abstract IState CalculateNextState();
+
     protected PlayerState(IStateMachine stateMachine)
     {
         _nextStates = new Dictionary<Func<bool>, IState>();
@@ -53,4 +55,6 @@ public abstract class PlayerState : IState
 
         }
     }
+
+
 }
