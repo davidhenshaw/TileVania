@@ -9,25 +9,25 @@ public class GroundedState : PlayerMovementState
 
     public GroundedState(IPlayerEntity playerEntity, IStateMachine stateMachine) : base(playerEntity, stateMachine)
     {
-        _rigidBody = _playerEntity.RigidBody;
-        _animator = _playerEntity.Animator;
-        _groundCollider = _playerEntity.GroundCollider;
-        _headCollider = _playerEntity.HeadCollider;
+        _rigidBody = _playerController.RigidBody;
+        _animator = _playerController.Animator;
+        _groundCollider = _playerController.GroundCollider;
+        _headCollider = _playerController.HeadCollider;
     }
 
     public override IEnumerator Enter()
     {
         _nextStates.Add(
             () => RequestedClimb(),
-            new ClimbState(_playerEntity, _stateMachine));
+            new ClimbState(_playerController, _stateMachine));
 
         _nextStates.Add(
             () => !IsGrounded(),
-            new UngroundedState(_playerEntity, _stateMachine));
+            new UngroundedState(_playerController, _stateMachine));
 
         _nextStates.Add(
             () => IsHoldingCrouch(),
-            new CrouchState(_playerEntity, _stateMachine));
+            new CrouchState(_playerController, _stateMachine));
 
         return base.Enter();
     }
@@ -104,12 +104,5 @@ public class GroundedState : PlayerMovementState
         return Input.GetAxis("Vertical") < 0;
     }
 
-    private bool RequestedClimb()
-    {
-        float yAxis = Input.GetAxis("Vertical");
-
-        return _groundCollider.IsTouchingLayers(LayerMask.GetMask("Climbable"))
-           && (Mathf.Abs(yAxis) > Mathf.Epsilon);
-    }
 
 }

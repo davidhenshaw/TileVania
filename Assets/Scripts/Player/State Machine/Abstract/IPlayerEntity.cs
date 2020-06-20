@@ -10,6 +10,6 @@ public interface IPlayerEntity
     Collider2D HeadCollider { get; }
     Collider2D BodyCollider { get; }
     Collider2D GroundCollider { get; }
-    PlayerInput Input { get; }
+    IPlayerInput Input { get; }
 }
 

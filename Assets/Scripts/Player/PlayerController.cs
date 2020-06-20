@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
     public Collider2D GroundCollider { get => _groundCollider; }
     public CommandBuffer UngroundedJumpBuffer { get => _ungroundedJumpBuffer; }
     public CommandBuffer CoyoteTimeBuffer { get => _coyoteTimeBuffer; }
-    public PlayerInput Input { get => _input; }
+    public IPlayerInput Input { get => _input; }
 
     [Header("Sounds")]
     [SerializeField] AudioClip _deathSound;
@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
             return;
         }
 
+        // Swimming
         if (IsTouchingWater())
         {
             _stateMachine.SetState(new SwimState(this, _stateMachine));

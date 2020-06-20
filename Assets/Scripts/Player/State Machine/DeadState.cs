@@ -12,29 +12,29 @@ public class DeadState : PlayerMovementState
 
     public override IEnumerator Exit()
     {
-        _playerEntity.Animator.SetBool(ANIM_BOOL_HURTING, false);
-        _playerEntity.GroundCollider.enabled = true;
-        _playerEntity.HeadCollider.enabled = true;
-        _playerEntity.BodyCollider.enabled = true;
+        _playerController.Animator.SetBool(ANIM_BOOL_HURTING, false);
+        _playerController.GroundCollider.enabled = true;
+        _playerController.HeadCollider.enabled = true;
+        _playerController.BodyCollider.enabled = true;
         return base.Exit();
     }
 
     public override IEnumerator Enter()
     {
-        float pushForce = _playerEntity.PlayerControllerSettings.JumpVelocity;
-        Rigidbody2D rb = _playerEntity.RigidBody;
+        float pushForce = _playerController.PlayerControllerSettings.JumpVelocity;
+        Rigidbody2D rb = _playerController.RigidBody;
 
-        _playerEntity.Animator.SetBool(ANIM_BOOL_HURTING, true);
-        _playerEntity.Animator.SetTrigger(ANIM_TRIGGER_DIE);
+        _playerController.Animator.SetBool(ANIM_BOOL_HURTING, true);
+        _playerController.Animator.SetTrigger(ANIM_TRIGGER_DIE);
 
         //Make the player do a little jump
         rb.velocity = Vector2.zero;
         rb.AddForce(Vector2.up * pushForce , ForceMode2D.Impulse);
 
         //Disable colliders so player falls through the map
-        _playerEntity.GroundCollider.enabled = false;
-        _playerEntity.HeadCollider.enabled = false;
-        _playerEntity.BodyCollider.enabled = false;
+        _playerController.GroundCollider.enabled = false;
+        _playerController.HeadCollider.enabled = false;
+        _playerController.BodyCollider.enabled = false;
 
         return base.Enter();
     }

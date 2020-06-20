@@ -16,7 +16,7 @@ public class SwimState : PlayerMovementState
 
         _nextStates.Add(
             () => !IsSwimming(),
-            new UngroundedState(_playerEntity, _stateMachine)
+            new UngroundedState(_playerController, _stateMachine)
             );
 
         yield break;

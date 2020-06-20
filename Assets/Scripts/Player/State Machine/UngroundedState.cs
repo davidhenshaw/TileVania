@@ -19,11 +19,11 @@ public class UngroundedState : PlayerMovementState
     {
         _nextStates.Add(
             () => IsGrounded(),
-            new GroundedState(_playerEntity, _stateMachine));
+            new GroundedState(_playerController, _stateMachine));
 
         _nextStates.Add(
             () => CanClimb() && ClimbRequested(),
-            new ClimbState(_playerEntity, _stateMachine));
+            new ClimbState(_playerController, _stateMachine));
 
         UpdateAnimator();
         return base.Enter();
@@ -46,7 +46,7 @@ public class UngroundedState : PlayerMovementState
     void ProcessJumpRequest()
     {
         if(Input.GetButtonDown("Jump"))
-            _playerEntity.UngroundedJumpBuffer.SetFlag(true);
+            _playerController.UngroundedJumpBuffer.SetFlag(true);
     }
 
     protected bool ClimbRequested()

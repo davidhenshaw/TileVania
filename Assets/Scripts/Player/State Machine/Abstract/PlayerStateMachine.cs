@@ -16,6 +16,13 @@ public class PlayerStateMachine : MonoBehaviour, IStateMachine
     {
         _currState?.Tick();
         _currState?.CheckNextStates();
+
+        //IState nextState = _currState?.GetNextState();
+        //if(nextState != null)
+        //{
+        //    SetState(nextState);
+        //}
+
     }
 
     public virtual void SetState(IState newState)

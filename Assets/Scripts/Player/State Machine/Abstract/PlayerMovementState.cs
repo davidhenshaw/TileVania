@@ -9,48 +9,55 @@ public abstract class PlayerMovementState : PlayerState
     protected Animator _animator;
     protected Collider2D _groundCollider;
     protected CommandBuffer _coyoteTimeBuffer;
-    protected IPlayerEntity _playerEntity;
+    protected IPlayerEntity _playerController;
+    protected IPlayerInput _input;
     protected PlayerControllerSettings _playerSettings;
 
-    public PlayerMovementState(IPlayerEntity playerEntity, IStateMachine stateMachine) : base(stateMachine)
+    public PlayerMovementState(IPlayerEntity playerController, IStateMachine stateMachine) : base(stateMachine)
     {
-        _playerEntity = playerEntity;
-
-        _rigidBody = playerEntity.RigidBody;
-        _animator = playerEntity.Animator;
-        _groundCollider = playerEntity.GroundCollider;
-        _coyoteTimeBuffer = playerEntity.CoyoteTimeBuffer;
-        _playerSettings = playerEntity.PlayerControllerSettings;
+        _playerController = playerController;
+        _rigidBody = playerController.RigidBody;
+        _animator = playerController.Animator;
+        _groundCollider = playerController.GroundCollider;
+        _coyoteTimeBuffer = playerController.CoyoteTimeBuffer;
+        _input = playerController.Input;
+        _playerSettings = playerController.PlayerControllerSettings;
     }
 
     protected void HandleJump()
     {
-        bool jumpRequested = Input.GetButtonDown("Jump");
+        bool jumpRequested = _input.JumpPressed;
         bool canJump = IsGrounded() || _coyoteTimeBuffer.GetFlag() || IsSwimming();
-        bool jumpWasBuffered = _playerEntity.UngroundedJumpBuffer.GetFlag();
+        bool jumpWasBuffered = _playerController.UngroundedJumpBuffer.GetFlag();
 
         if (jumpRequested && canJump || jumpWasBuffered && canJump)
         {
-            //Play Sound
-
-            //Kill vertical velocity
-            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, 0);
-            // Do Jump
-            _rigidBody.velocity += Vector2.up * _playerSettings.JumpVelocity;
-            //Reset jump buffers so that you don't keep jumping
-            _playerEntity.UngroundedJumpBuffer.SetFlag(false);
-            _playerEntity.CoyoteTimeBuffer.SetFlag(false);
+            Jump();
         }
 
-        if (Input.GetButtonUp("Jump") && !IsGrounded() && _rigidBody.velocity.y > 0)
+        if (_input.JumpReleased && !IsGrounded() && _rigidBody.velocity.y > 0)
         {
             _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, _rigidBody.velocity.y * _playerSettings.JumpDamping);
         }
     }
 
+    protected void Jump()
+    {
+            //Play Sound
+
+            //Kill all previous vertical velocity
+            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, 0);
+            // Do Jump
+            _rigidBody.velocity += Vector2.up * _playerSettings.JumpVelocity;
+            //Reset jump buffers so that you don't keep jumping
+            _playerController.UngroundedJumpBuffer.SetFlag(false);
+            _playerController.CoyoteTimeBuffer.SetFlag(false);
+    }
+
     protected void MoveHorizontal()
     {
-        float xAxis = Input.GetAxis("Horizontal");
+        //float xAxis = Input.GetAxis("Horizontal");
+        float xAxis = _input.Horizontal;
 
         FlipSprite(xAxis);
 
@@ -62,7 +69,7 @@ public abstract class PlayerMovementState : PlayerState
 
     protected void FlipSprite(float horizontalAxis)
     {
-        SpriteRenderer renderer = _playerEntity.Animator.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer renderer = _playerController.Animator.GetComponentInChildren<SpriteRenderer>();
         // If horizontal input is very small or zero, don't flip
         if (Mathf.Abs(horizontalAxis) < Mathf.Epsilon)
             return;
@@ -95,4 +102,16 @@ public abstract class PlayerMovementState : PlayerState
     {
         return _groundCollider.IsTouchingLayers(LayerMask.GetMask("Water"));
     }
+
+    protected bool RequestedClimb()
+    {
+
+        return _input.ClimbPressed && _groundCollider.IsTouchingLayers(LayerMask.GetMask("Climbable"));
+
+        //float yAxis = Input.GetAxis("Vertical");
+
+        //return _groundCollider.IsTouchingLayers(LayerMask.GetMask("Climbable"))
+        //   && (Mathf.Abs(yAxis) > Mathf.Epsilon);
+    }
+
 }

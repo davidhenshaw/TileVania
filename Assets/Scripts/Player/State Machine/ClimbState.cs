@@ -19,22 +19,22 @@ public class ClimbState : PlayerMovementState
     {
         _nextStates.Add(
             () => !CanClimb(),
-            new GroundedState(_playerEntity, _stateMachine));
+            new GroundedState(_playerController, _stateMachine));
 
         _nextStates.Add(
             () => JumpRequested(),
-            new UngroundedState(_playerEntity, _stateMachine));
+            new UngroundedState(_playerController, _stateMachine));
 
 
-        _playerEntity.Animator.SetTrigger(ANIM_TRIGGER_STARTCLIMB);
+        _playerController.Animator.SetTrigger(ANIM_TRIGGER_STARTCLIMB);
         _rigidBody.gravityScale = 0;
         yield break;
     }
 
     public override IEnumerator Exit()
     {
-        _playerEntity.Animator.SetTrigger(ANIM_TRIGGER_ENDCLIMB);
-        _playerEntity.Animator.ResetTrigger(ANIM_TRIGGER_ENDCLIMB);
+        _playerController.Animator.SetTrigger(ANIM_TRIGGER_ENDCLIMB);
+        _playerController.Animator.ResetTrigger(ANIM_TRIGGER_ENDCLIMB);
 
         _animator.SetBool(ANIM_BOOL_CLIMBING, false);
         _rigidBody.gravityScale = 1;
@@ -48,7 +48,8 @@ public class ClimbState : PlayerMovementState
     public override void Tick()
     {
         MoveVertical();
-        MoveHorizontal();
+        base.MoveHorizontal();
+        UpdateAnimator();
     }
 
     void JumpOff()
@@ -58,7 +59,7 @@ public class ClimbState : PlayerMovementState
 
     bool JumpRequested()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (_input.JumpPressed)
             _jumpCancel = true;
 
         return _jumpCancel;
@@ -66,10 +67,14 @@ public class ClimbState : PlayerMovementState
 
     void MoveVertical()
     {
-        float yInput = Input.GetAxis("Vertical");
+        float yInput = _input.Vertical;
 
         _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, _climbSpeed * yInput);
+    }
 
+    void UpdateAnimator()
+    {
+        float yInput = _input.Vertical;
         bool isMoving = Mathf.Abs(yInput) > Mathf.Epsilon;
 
         _animator.SetBool(ANIM_BOOL_CLIMBING, isMoving);

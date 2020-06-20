@@ -12,9 +12,9 @@ public class CrouchState : PlayerMovementState
     {
         _nextStates.Add(
             () => !IsHoldingCrouch(),
-            new GroundedState(_playerEntity,_stateMachine));
+            new GroundedState(_playerController,_stateMachine));
 
-        _playerEntity.HeadCollider.enabled = false;
+        _playerController.HeadCollider.enabled = false;
 
         _animator.SetBool(ANIM_BOOL_CROUCHING, true);
 
@@ -25,7 +25,7 @@ public class CrouchState : PlayerMovementState
 
     public override IEnumerator Exit()
     {
-        _playerEntity.HeadCollider.enabled = true;
+        _playerController.HeadCollider.enabled = true;
         _animator.SetBool(ANIM_BOOL_CROUCHING, false);
         return base.Exit();
     }

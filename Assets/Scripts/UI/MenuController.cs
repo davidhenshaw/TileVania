@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuSelector : MonoBehaviour
 {
     IMenuUIElement[] _elements;
-    PlayerInput _input;
+    IPlayerInput _input;
     int currentElement;
 
     private void Awake()
