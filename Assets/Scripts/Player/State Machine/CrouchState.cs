@@ -18,9 +18,6 @@ public class CrouchState : PlayerMovementState
 
     public override IEnumerator Enter()
     {
-        _nextStates.Add(
-            () => !IsHoldingCrouch(),
-            new GroundedState(_playerController,_stateMachine));
 
         _playerController.HeadCollider.enabled = false;
 

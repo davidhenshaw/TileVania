@@ -16,7 +16,6 @@ public class PlayerStateMachine : MonoBehaviour, IStateMachine
     protected void Update()
     {
         _currState?.Tick();
-        //_currState?.CheckNextStates();
         _nextState = _currState?.CalculateNextState();
 
         if (_nextState != null)

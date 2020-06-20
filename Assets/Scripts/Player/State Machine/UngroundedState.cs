@@ -28,14 +28,6 @@ public class UngroundedState : PlayerMovementState
 
     public override IEnumerator Enter()
     {
-        _nextStates.Add(
-            () => IsGrounded(),
-            new GroundedState(_playerController, _stateMachine));
-
-        _nextStates.Add(
-            () => CanClimb() && ClimbRequested(),
-            new ClimbState(_playerController, _stateMachine));
-
         UpdateAnimator();
         return base.Enter();
     }

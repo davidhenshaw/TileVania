@@ -27,15 +27,6 @@ public class ClimbState : PlayerMovementState
 
     public override IEnumerator Enter()
     {
-        _nextStates.Add(
-            () => !CanClimb(),
-            new GroundedState(_playerController, _stateMachine));
-
-        _nextStates.Add(
-            () => JumpRequested(),
-            new UngroundedState(_playerController, _stateMachine));
-
-
         _playerController.Animator.SetTrigger(ANIM_TRIGGER_STARTCLIMB);
         _rigidBody.gravityScale = 0;
         yield break;

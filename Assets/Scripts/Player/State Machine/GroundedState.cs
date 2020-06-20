@@ -30,23 +30,6 @@ public class GroundedState : PlayerMovementState
         return null;
     }
 
-    public override IEnumerator Enter()
-    {
-        _nextStates.Add(
-            () => RequestedClimb(),
-            new ClimbState(_playerController, _stateMachine));
-
-        _nextStates.Add(
-            () => !IsGrounded(),
-            new UngroundedState(_playerController, _stateMachine));
-
-        _nextStates.Add(
-            () => IsHoldingCrouch(),
-            new CrouchState(_playerController, _stateMachine));
-
-        return base.Enter();
-    }
-
     public override IEnumerator Exit()
     {
         _coyoteTimeBuffer.SetFlag(true);

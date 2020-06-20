@@ -105,13 +105,7 @@ public abstract class PlayerMovementState : PlayerState
 
     protected bool RequestedClimb()
     {
-
         return _input.ClimbPressed && _groundCollider.IsTouchingLayers(LayerMask.GetMask("Climbable"));
-
-        //float yAxis = Input.GetAxis("Vertical");
-
-        //return _groundCollider.IsTouchingLayers(LayerMask.GetMask("Climbable"))
-        //   && (Mathf.Abs(yAxis) > Mathf.Epsilon);
     }
 
 }

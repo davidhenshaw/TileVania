@@ -22,11 +22,6 @@ public class SwimState : PlayerMovementState
     {
         Debug.Log("Swimming");
 
-        _nextStates.Add(
-            () => !IsSwimming(),
-            new UngroundedState(_playerController, _stateMachine)
-            );
-
         yield break;
     }
 

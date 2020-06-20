@@ -16,14 +16,12 @@ public abstract class PlayerState : IState
     public const string ANIM_TRIGGER_STARTCLIMB = "startClimb";
     public const string ANIM_TRIGGER_ENDCLIMB = "endClimb";
 
-    protected Dictionary<Func<bool>, IState> _nextStates;
     protected IStateMachine _stateMachine;
 
     public abstract IState CalculateNextState();
 
     protected PlayerState(IStateMachine stateMachine)
     {
-        _nextStates = new Dictionary<Func<bool>, IState>();
         _stateMachine = stateMachine;
     }
 
@@ -42,19 +40,5 @@ public abstract class PlayerState : IState
     {
         yield break;
     }
-
-    public void CheckNextStates()
-    {
-        foreach (Func<bool> condition in _nextStates.Keys)
-        {
-            if (condition())
-            {
-                _stateMachine.SetState(_nextStates[condition]);
-                break;
-            }
-
-        }
-    }
-
 
 }
