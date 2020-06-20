@@ -115,8 +115,4 @@ public abstract class PlayerMovementState : PlayerState
         return _input.PouncePressed && IsGrounded();
     }
 
-    protected bool StompingEnemy()
-    {
-        return _playerController.FeetHitbox.IsTouchingLayers(LayerMask.GetMask("Enemy"));
-    }
 }

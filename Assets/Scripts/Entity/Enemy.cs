@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, ITakeDamage
 {
     const string ANIM_TRIGGER_DIE = "died";
 
@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Vector2 _direction;
     [SerializeField] Collider2D _bodyCollider;
     [SerializeField] LayerMask _walkableSurfaceMask;
+    Coroutine deathSequence;
 
     private void Awake()
     {
@@ -33,15 +34,22 @@ public class Enemy : MonoBehaviour
         MoveHorizontal();
     }
 
-    public void Die()
+    public void TakeDamage(int hp)
     {
-
+        if(deathSequence == null)
+            deathSequence = StartCoroutine(Co_Die());
     }
 
     private IEnumerator Co_Die()
     {
-        GetComponent<Animator>().SetTrigger(ANIM_TRIGGER_DIE);
+        //GetComponent<Animator>().SetTrigger(ANIM_TRIGGER_DIE);
+
+        //Play Sound
+        //Play Particle Effect/Animation
+
+        Destroy(gameObject);
         yield return new WaitForSeconds(3);
+        //Destroy
     }
 
     private void MoveHorizontal()
@@ -67,4 +75,6 @@ public class Enemy : MonoBehaviour
     {
         transform.RotateAround(transform.position, axis, 180);
     }
+
+
 }
