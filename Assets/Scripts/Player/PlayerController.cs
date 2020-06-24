@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
     [SerializeField] Collider2D _headCollider;
     [SerializeField] Collider2D _bodyCollider;
     [SerializeField] Hitbox _feetHitbox;
+    IHealth _health;
 
     public Animator Animator { get => _animator; }
     public Rigidbody2D RigidBody { get => _rigidBody; }
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
     void Awake()
     {
         _input = new KeyboardInput();
+        _health = GetComponent<IHealth>();
         _stateMachine = GetComponent<IStateMachine>();
         _coyoteTimeBuffer = new CommandBuffer(_playerSettings.CoyoteTime); 
         _ungroundedJumpBuffer = new CommandBuffer(_playerSettings.UngroundedJumpTime);
@@ -48,6 +50,8 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
     {
         _stateMachine.SetState(
             new UngroundedState(this, _stateMachine));
+
+        _health.Died += OnPlayerDeath;
     }
 
     private void FixedUpdate()
@@ -63,16 +67,23 @@ public class PlayerController : MonoBehaviour, IPlayerEntity
         }
     }
 
+    void OnPlayerDeath()
+    {
+        PlayerDied?.Invoke(transform.position);
+        SFX.instance.Play(_deathSound);
+        _stateMachine.SetState(new DeadState(this, _stateMachine));
+    }
+
     private void CalculateNextState()
     {
         // Player Death
-        if (IsTouchingHazard())
-        {
-            PlayerDied?.Invoke(transform.position);
-            SFX.instance.Play(_deathSound);
-            _stateMachine.SetState(new DeadState(this, _stateMachine));
-            return;
-        }
+        //if (IsTouchingHazard())
+        //{
+        //    PlayerDied?.Invoke(transform.position);
+        //    SFX.instance.Play(_deathSound);
+        //    _stateMachine.SetState(new DeadState(this, _stateMachine));
+        //    return;
+        //}
 
         // Swimming
         if (IsTouchingWater())

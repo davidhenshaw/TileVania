@@ -20,15 +20,11 @@ public class SwimState : PlayerMovementState
     // Start is called before the first frame update
     public override IEnumerator Enter()
     {
-        Debug.Log("Swimming");
-
         yield break;
     }
 
     public override IEnumerator Exit()
     {
-        Debug.Log("Stopped Swimming");
-
         yield break;
     }
 

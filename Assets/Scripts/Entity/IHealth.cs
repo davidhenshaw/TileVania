@@ -1,18 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class IHealth : MonoBehaviour
+public interface IHealth
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    event Action Died;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void TakeDamage(int damage);
+    void RestoreHealth(int health);
 }

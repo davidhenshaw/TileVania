@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour, ITakeDamage
         MoveHorizontal();
     }
 
+
+
     public void TakeDamage(int hp)
     {
         if(deathSequence == null)
