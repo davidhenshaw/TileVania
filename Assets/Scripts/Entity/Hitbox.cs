@@ -9,12 +9,12 @@ public class Hitbox : MonoBehaviour
 
     public event Action hit;
 
-    private void OnEnable()
+    public void Enable()
     {
         GetComponent<Collider2D>().enabled = true;
     }
 
-    private void OnDisable()
+    public void Disable()
     {
         GetComponent<Collider2D>().enabled = false;
     }

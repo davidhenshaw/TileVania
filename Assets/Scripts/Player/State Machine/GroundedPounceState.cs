@@ -7,7 +7,7 @@ public class GroundedPounceState : PlayerMovementState
 {
     EdgeDetector edgeDetector;
     float horizontalForce = 0.7f;
-    float verticalForce = 0.7f;
+    float verticalForce = 1;
     Vector2 jumpDirection;
     float jumpForce;
 
@@ -42,7 +42,7 @@ public class GroundedPounceState : PlayerMovementState
     public override IEnumerator Exit()
     {
         _playerController.FeetHitbox.hit -= Bounce;
-        _playerController.FeetHitbox.enabled = false;
+        _playerController.FeetHitbox.Disable();
         _bounceCount = 0;
         return base.Exit();
     }
@@ -65,7 +65,7 @@ public class GroundedPounceState : PlayerMovementState
                                         jumpDirection.y);
 
         //Activate hitbox
-        _hitbox.enabled = true;
+        _hitbox.Enable();
 
         //Do Pounce
         _rigidBody.AddForce(jumpDirection.normalized * jumpForce, ForceMode2D.Impulse);

@@ -30,8 +30,6 @@ public class GroundedState : PlayerMovementState
         if (IsHoldingCrouch())
             return new CrouchState(_playerController, _stateMachine);
 
-
-
         return null;
     }
 
