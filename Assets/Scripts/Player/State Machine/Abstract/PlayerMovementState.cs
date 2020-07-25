@@ -43,13 +43,13 @@ public abstract class PlayerMovementState : PlayerState
 
     protected void Jump()
     {
-            //Play Sound
+            // Play Sound
 
-            //Kill all previous vertical velocity
+            // Kill all previous vertical velocity
             _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, 0);
-            // Do Jump
+            // Add Jump velocity
             _rigidBody.velocity += Vector2.up * _playerSettings.JumpVelocity;
-            //Reset jump buffers so that you don't keep jumping
+            // Reset jump buffers so that you don't keep jumping
             _playerController.UngroundedJumpBuffer.SetFlag(false);
             _playerController.CoyoteTimeBuffer.SetFlag(false);
     }
@@ -112,7 +112,7 @@ public abstract class PlayerMovementState : PlayerState
     
     protected bool RequestedPounce()
     {
-        return _input.PouncePressed && IsGrounded();
+        return _input.PouncePressed;
     }
 
 }

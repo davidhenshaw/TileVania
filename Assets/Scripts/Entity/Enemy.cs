@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
 
     Rigidbody2D _rigidbody;
     EdgeDetector2D _wallEdgeDetector;
+    //EdgeDetector2D _playerEdgeDetector;
     [SerializeField] float _moveSpeed = 3f;
     [SerializeField] Vector2 _direction;
     [SerializeField] Collider2D _bodyCollider;
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
     {
         _direction.Normalize();
         _wallEdgeDetector = GetComponentInChildren<EdgeDetector2D>();
+        //_playerEdgeDetector = GetComponentInChildren<EdgeDetector2D>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _bodyCollider = GetComponent<Collider2D>();
     }
@@ -25,7 +27,8 @@ public class Enemy : MonoBehaviour, ITakeDamage
 
     private void Start()
     {
-        _wallEdgeDetector.FallingEdge += FlipX;
+        //_wallEdgeDetector.FallingEdge += FlipX;
+        //_playerEdgeDetector.RisingEdge += FlipX;
     }
 
     // Update is called once per frame
@@ -61,14 +64,14 @@ public class Enemy : MonoBehaviour, ITakeDamage
     }
 
     [ContextMenu("Flip about x")]
-    void FlipX()
+    public void FlipX()
     {
         transform.RotateAround(transform.position, Vector3.up, 180);
         _direction.x = _direction.x * -1;
     }
 
     [ContextMenu("Flip about y")]
-    void FlipY()
+    public void FlipY()
     {
         transform.RotateAround(transform.position, Vector3.right, 180);
     }

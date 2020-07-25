@@ -26,7 +26,7 @@ public class GroundedPounceState : PlayerMovementState
 
     public override IState CalculateNextState()
     {
-        if (edgeDetector.IsRisingEdge())
+        if (HasGrounded())
             return new GroundedState(_playerController, _stateMachine);
 
         return null;
@@ -82,5 +82,11 @@ public class GroundedPounceState : PlayerMovementState
 
         //Do Pounce
         _rigidBody.AddForce(jumpDirection.normalized * jumpForce, ForceMode2D.Impulse);
+    }
+
+    private bool HasGrounded()
+    {
+        return edgeDetector.IsRisingEdge() && _playerController.RigidBody.velocity.y <= 0;
+        //return edgeDetector.IsRisingEdge();
     }
 }

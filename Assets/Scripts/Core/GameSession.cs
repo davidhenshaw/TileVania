@@ -33,7 +33,6 @@ public class GameSession : MonoBehaviour
     void Start()
     {
         SceneLoader.LoadGameUIAsync();
-
         Collectable.ItemCollected += OnCollectiblePickedUp;
         Door.Opened += OnDoorOpen;
         PlayerController.PlayerDied += OnPlayerDeath;

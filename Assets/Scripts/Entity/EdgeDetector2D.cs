@@ -17,6 +17,9 @@ public class EdgeDetector
     public EdgeDetector(Func<bool> func)
     {
         conditionFunc = func;
+
+        //initialize prevFlag so that a false edge isn't detected
+        prevFlag = func();
     }
 
     public void Poll()
